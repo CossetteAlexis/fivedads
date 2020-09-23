@@ -58,49 +58,51 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<a href="login" type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
-					</button>
+					</a>
 				</div>
 				<div class="modal-body py-0">
 					<div class="row">
 						<div class="col-md-8">
-							<form method="POST" action="#">
-								<p class="text-muted">Log in to your account</p>
-								<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<span class="input-group-text"><i class="fa fa-envelope"></i></span>
-									</div>
-									<input id="email" type="email" class="form-control" name="email" required autocomplete="email" autofocus placeholder="Email Address">
+							<!-- <form method="POST" action="login"> -->
+							<?= form_open('login'); ?>
+							<?= validation_errors(); ?>
+							<p class="text-muted">Log in to your account</p>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa fa-envelope"></i></span>
 								</div>
+								<input id="username" type="text" class="form-control" name="username" required autocomplete="off" autofocus placeholder="Username" value="<?= set_value('username'); ?>">
+							</div>
 
-								<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<span class="input-group-text"><i class="fa fa-lock"></i></span>
-									</div>
-									<input id="password" type="password" class="form-control" name="password" required autocomplete="current-password" placeholder="Password">
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa fa-lock"></i></span>
 								</div>
+								<input id="password" type="password" class="form-control" name="password" required placeholder="Password">
+							</div>
 
-								<div class="input-group mb-3">
-									<div class="">
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" name="remember" id="remember">
+							<div class="input-group mb-3">
+								<div class="">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="remember" id="remember">
 
-											<label class="form-check-label text-muted" for="remember">
-												Remember Me
-											</label>
-										</div>
+										<label class="form-check-label text-muted" for="remember">
+											Remember Me
+										</label>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-5 pb-3">
-										<button type="submit" class="btn btn-primary float-left">Log in</button>
-									</div>
-									<div class="col-7 pb-3">
-										<a class="btn btn-link" href="#">Forgot Your Password?</a>
-									</div>
+							</div>
+							<div class="row">
+								<div class="col-5 pb-3">
+									<button type="submit" class="btn btn-primary float-left">Log in</button>
 								</div>
-							</form>
+								<div class="col-7 pb-3">
+									<a class="btn btn-link" href="#">Forgot Your Password?</a>
+								</div>
+							</div>
+							<!-- </form> -->
 						</div>
 						<div class="col-md-4 bg-primary ">
 							<div class="text-center">

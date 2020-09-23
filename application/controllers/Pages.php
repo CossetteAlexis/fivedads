@@ -16,6 +16,30 @@ class Pages extends CI_Controller
 		}
 	}
 
+	public function login()
+	{
+		echo 'login';
+		// $this->form_validation->set_error_delimeters('<div class="alert alert-danger">', '</div>');
+
+		// $user_id = $this->New_shop_model->login();
+
+		// if ($user_id) {
+		// 	$user_data = array(
+		// 		'firstname' => $user_id['firstname'],
+		// 		'lastname' => $user_id['lastname'],
+		// 		'fullname' => $user_id['firstname'] . $user_id['lastname'],
+		// 		'email' => $user_id['email'],
+		// 		'logged_in' => true
+		// 	);
+		// 	$this->session->set_userdata($user_data);
+		// 	$this->session->set_flashdata('user_loggedin', 'You are now logged in!' . $this->session->fullname);
+		// 	redirect(base_url());
+		// } else {
+		// 	$this->session->set_flashdata('user_loggedfailed', 'Login Failed!');
+		// 	redirect(base_url());
+		// }
+	}
+
 	public function cart()
 	{
 		$page = 'new_cart';

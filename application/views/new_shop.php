@@ -92,6 +92,15 @@
 
 <!-- Shop -->
 <section class="container-fluid px-5">
+	<?php if ($this->session->flashdata('user_loggedin')) : ?>
+		<?= '<p class="alert alert-success">' . $this->session->flashdata('user_loggedin') . '</p>'; ?>
+	<?php endif; ?>
+	<?php if ($this->session->flashdata('user_loggedfailed')) : ?>
+		<?= '<p class="alert alert-danger">' . $this->session->flashdata('user_loggedfailed') . '</p>'; ?>
+	<?php endif; ?>
+
+	<?= validation_errors(); ?>
+
 	<div class="row">
 		<div class="col-md-6 pt-5">
 			<div class="d-flex">
